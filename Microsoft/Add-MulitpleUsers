@@ -1,0 +1,5 @@
+Import-Csv "C:\aduserlimpol.csv" -Encoding UTF8 | ForEach-Object {
+
+$upn = $_.SamAccountName + "@limpol.pl"
+New-ADUser -Name $_.Name -GivenName $_."GivenName" -Surname  $_."Surname" -SamAccountName  $_."samAccountName" -OfficePhone $_."TelephoneNumber" -DisplayName $_."DisplayName" -EmailAddress $_."EmailAddress" -Path $_."Path" -UserPrincipalName $upn -AccountPassword (ConvertTo-SecureString “L1mp0L#$#” -AsPlainText -force) -Enabled $true -ChangePasswordAtLogon 1 
+}
