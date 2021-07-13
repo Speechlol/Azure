@@ -1,6 +1,6 @@
 # Add the service principal application ID and secret here
-$servicePrincipalClientId="<ServicePrincipalApplicationId>"
-$servicePrincipalSecret="<ENTER SECRET HERE>"
+$servicePrincipalClientId="ServicePrincipalApplicationId"
+$servicePrincipalSecret="ENTER SECRET HERE"
 
 # Download the package
 function download() {$ProgressPreference="SilentlyContinue"; Invoke-WebRequest -Uri https://aka.ms/AzureConnectedMachineAgent -OutFile AzureConnectedMachineAgent.msi}
